@@ -1,9 +1,9 @@
-import RegistrationPage from "./pages/RegistrationPage";
+import RegisrationPage from "./components/RegisrationPage";
 
 const App = () => {
   return (
     <div className="flex h-screen justify-center items-center">
-      <RegistrationPage />
+      <RegisrationPage />
     </div>
   );
 };
