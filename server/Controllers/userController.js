@@ -1,7 +1,7 @@
 import ErrorHandler from "../Middleware/error.js";
 import { catchAsyncError } from "../Middleware/catchAsyncError.js";
 import { User } from "../Models/userModel.js";
-
+import twilio from 'twilio'
 export const register = catchAsyncError(async (req, res, next) => {
   try {
     const { name, email, phone, password, verificationMethod } = req.body;
@@ -84,6 +84,11 @@ async function sendVerificationCode(
   if (verificationMethod === "email") {
     const message = generateEmailTemplate(verificationCode);
     sendMail({ email, subject: "Your verification code", message });
+  } else if (verificationCode === "phone") {
+    const verificationCodeWithSpace = verificationCode
+      .toString()
+      .split("")
+      .join(" ");
   }
 }
 
