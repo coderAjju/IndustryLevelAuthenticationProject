@@ -1,9 +1,8 @@
-import LoginRegister from "./components/LoginRegister";
 
 const App = () => {
   return (
     <div className="flex h-screen justify-center items-center">
-      <LoginRegister />
+      hello
     </div>
   );
 };
